@@ -1,19 +1,20 @@
-const valorAdic = (valor, quantidade) => {
-    let valorCalculado = ''
+const valorAdic = ({ valor, quantidade }) => {
+    valor = Number(valor);
+    quantidade = Number(quantidade);
 
-    if (valor * quantidade <= 3000){
-         valorCalculado = "Insento"
-    }else if ( valor * quantidade <= 8000){
-        valorCalculado = (valor * quantidade) * 1.05
-    }else if ( valor  * quantidade <= 12000){
-        valorCalculado = (valor * quantidade) * 1.10
-    }else if ( valor * quantidade <= 20000){
-        valorCalculado = (valor * quantidade) * 1.15
-    }else{
-        valorCalculado = (valor * quantidade) * 1.20
+    const total = valor * quantidade;
+
+    if (total <= 3000) {
+        return "Isento";
+    } else if (total <= 8000) {
+        return total * 1.05;
+    } else if (total <= 12000) {
+        return total * 1.10;
+    } else if (total <= 20000) {
+        return total * 1.15;
     }
-    return valorCalculado
 
+    return total * 1.20;
 }
 
 export{valorAdic}

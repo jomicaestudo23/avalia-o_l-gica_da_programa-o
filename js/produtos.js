@@ -40,10 +40,11 @@ const addInformacoes = (novaInf) => {
 
         const resultado = valorAdic(elem)
 
-        listInf.innerHTML += `
-        <p> produto ${elem.produto}<p>
-        <p> ${elem.valor}<p>
-        <p> ${elem.quantidade}`
+        divDados.innerHTML += `
+        <p> Produto: ${elem.produto}<p>
+        <p> Valor: ${elem.valor}<p>
+        <p> Quantidade: ${elem.quantidade}
+        <p> Valor total: ${resultado.toFixed(2)}<p>`
     })
  }
 listInf()
