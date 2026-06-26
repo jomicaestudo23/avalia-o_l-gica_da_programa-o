@@ -1,5 +1,5 @@
-
-const formDados = document.querySelector('#div-form');
+import { valorAdic } from "./calculos.js";
+const formDados = document.querySelector('#form-dados');
 const divDados = document.querySelector('#div-dados');
 
 const produtos = []
@@ -17,7 +17,7 @@ formDados.addEventListener('submit', (evt) => {
     
     addInformacoes(informacoes)
 
-    divDados.reset()
+   formDados.reset()
 });
 
 const addInformacoes = (novaInf) => {
@@ -32,9 +32,20 @@ const addInformacoes = (novaInf) => {
     if (produtos.length === 0){
         divDados.innerHTML = "Nada foi registrado"
         return
+    }else{
+
     }
 
- }
+    produtos.forEach((elem, i) =>{
 
+        const resultado = valorAdic(elem)
+
+        listInf.innerHTML += `
+        <p> produto ${elem.produto}<p>
+        <p> ${elem.valor}<p>
+        <p> ${elem.quantidade}`
+    })
+ }
+listInf()
 
 
