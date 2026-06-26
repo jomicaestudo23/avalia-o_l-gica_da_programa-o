@@ -43,7 +43,7 @@ const addInformacoes = (novaInf) => {
         listInf.innerHTML += `
         <p> produto ${elem.produto}<p>
         <p> ${elem.valor}<p>
-        <p> ${elem.quantidade}<p>`
+        <p> ${elem.quantidade}`
     })
  }
 listInf()
